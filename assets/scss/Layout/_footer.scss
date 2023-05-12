@@ -1,0 +1,46 @@
+@use "../variables" as *;
+/*--------------------------------------
+  footer　フッター
+  --------------------------------------*/
+footer {
+  background: rgba(0, 0, 0, 0.7);
+}
+footer article {
+  padding: 20px 180px;
+
+  @include device-width-1140px {
+    // padding: 0 !important;
+  }
+  @include device-width-800px {
+    margin: 0;
+    padding: 8px;
+  }
+}
+footer section {
+  padding: 0 32px;
+}
+footer h2 {
+  color: #fff;
+  margin: 0;
+  padding: 32px 0;
+}
+.sns {
+  padding-bottom: 50px;
+
+  @include device-width-800px {
+    text-align: center;
+  }
+}
+.sns span a i {
+  color: #fff;
+  font-size: 12rem;
+  padding: 0 56px 0 0;
+
+  @include device-width-1140px {
+    font-size: 9rem;
+    padding: 0 14px 0 0;
+  }
+  @include device-width-800px {
+    font-size: 6rem;
+  }
+}

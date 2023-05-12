@@ -1,0 +1,90 @@
+//レスポンシブデザインを実装する際のデバイス幅の設定
+$mini-pc: 1140px;
+$large-tablet: 960px;
+$kindlefireHD: 800px;
+$tablet: 768px;
+$mini-tablet: 540px;
+$iPhone11: 414px;
+$iPhoneX: 375px;
+$iPhoneSE: 320px;
+
+@mixin device-width-1140px {
+  @media screen and (max-width: ($mini-pc)) {
+    @content;
+  }
+}
+
+@mixin device-width-960px {
+  @media screen and (max-width: ($large-tablet)) {
+    @content;
+  }
+}
+
+@mixin device-width-800px {
+  @media screen and (max-width: ($kindlefireHD)) {
+    @content;
+  }
+}
+
+@mixin device-width-768px {
+  @media screen and (max-width: ($tablet)) {
+    @content;
+  }
+}
+
+@mixin device-width-540px {
+  @media screen and (max-width: ($mini-tablet)) {
+    @content;
+  }
+}
+
+@mixin device-width-414px {
+  @media screen and (max-width: ($iPhone11)) {
+    @content;
+  }
+}
+
+@mixin device-width-375px {
+  @media screen and (max-width: ($iPhoneX)) {
+    @content;
+  }
+}
+
+@mixin device-width-320px {
+  @media screen and (max-width: ($iPhoneSE)) {
+    @content;
+  }
+}
+
+//色の変数管理
+$mainBlue: #1f2e54;
+$mainYellow: #f7c114;
+
+// サイトカラー
+$mainColor: #ddd;
+$subColor: #707070;
+$linkColor: #347df7;
+$blue: #C1F1F8;
+
+// FontAwesomeを疑似要素で使用するときの設定
+$fontAwesome: "Font Awesome 5 Free";
+
+// 三点リーダー対応(デフォルト: 2行で三点リーダーを表示)
+@mixin ThreePointLeader($line: 2) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $line;
+  overflow: hidden;
+}
+
+// hover時の画像ズームアップ
+@mixin backgroundImageZoom($zoomFactor: 1.05) {
+  transform: scale($zoomFactor);
+  transition: all 0.3s ease-out;
+}
+
+// 中抜き文字の設定
+@mixin HollowLetters($color: $mainColor) {
+  color: transparent;
+  -webkit-text-stroke: 2px $color;
+}

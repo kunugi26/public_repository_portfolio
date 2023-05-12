@@ -1,0 +1,204 @@
+/*--------------------------------------
+  contact.index　お問合せ
+  --------------------------------------*/
+#header {
+  background: black;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  padding: 5px 40px;
+  color: white;
+}
+#header a {
+  color: white;
+  font-size: 12px;
+  text-decoration: none;
+}
+#header a:hover {
+  opacity: 0.8;
+}
+#info,
+#code {
+  padding: 20px 40px;
+  background: rgba(0, 0, 0, 0.53);
+  width: 490px;
+  margin-top: 50px;
+  border-radius: 0 10px 10px 0;
+}
+#pname {
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  font-size: 50px;
+  margin: 0;
+  margin-top: 20px;
+}
+#pinfo {
+  margin: 0;
+  font-size: 15px;
+}
+#link {
+  background: #cf0000;
+  color: white;
+  text-decoration: none;
+  padding: 4px 8px;
+  display: block;
+  width: 40px;
+  text-align: center;
+  border-radius: 5px;
+  margin-top: 10px;
+  font-size: 12px;
+}
+#link:hover {
+  background: #e90000;
+}
+#code {
+}
+#code pre {
+  margin: 0;
+  font-size: 12px;
+  font-family: "Lucida Console";
+}
+#OF_form1 {
+  width: 800px;
+  /*    max-width: 1000px;*/
+  text-align: left;
+  margin: 72px auto;
+}
+#OF_form1 table#formtable {
+  border-collapse: collapse;
+}
+#OF_form1 table#formtable tr#caption th {
+  width: 544px;
+  padding: 5px;
+  font-size: 1.5rem;
+}
+#OF_form1 table#formtable tr th,
+#OF_form1 table#formtable tr td {
+  padding: 3px;
+  font-size: 1.1rem;
+}
+#OF_form1 table#formtable tr th {
+  width: 50%;
+  vertical-align: center;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+#OF_form1 table#formtable tr td {
+  width: 100%;
+}
+#OF_form1 table#formtable tr td label {
+  display: block;
+  float: left; /*white-space:nowrap;*/
+}
+#OF_form1 input.OF_submit_btn1 {
+  display: block;
+  margin: 10px auto;
+  font-size: 16px;
+  padding: 5px;
+}
+#OF_form1 input.action_send {
+  margin: 10px auto;
+  font-size: 16px;
+  padding: 5px;
+}
+#OF_form1 input.action_back {
+  margin: 10px auto;
+  font-size: 16px;
+  padding: 5px;
+}
+#OF_form1 input.text {
+  width: 200px;
+}
+#OF_form1 textarea {
+  width: 335px;
+  height: 150px;
+  font-size: 1rem;
+}
+/** unique */
+#OF_form1 #sec_seimei input {
+  width: 60px;
+}
+#OF_header {
+  width: 550px;
+  text-align: left;
+}
+#OF_footer {
+  width: 550px;
+  text-align: left;
+}
+#OF_header h1#default {
+  font-size: 24px;
+}
+#OF_header img {
+  margin-left: auto;
+  margin-right: auto;
+  height: auto; /* width: 100%; */
+}
+/** required free */
+#OF_form1 .required {
+  color: #fff;
+  background-color: #f20000;
+  padding: 1px 3px 0px 3px;
+  margin-left: 5px;
+  float: right;
+}
+#OF_form1 .free {
+  color: #fff;
+  background-color: #0000e8;
+  padding: 1px 3px 0px 3px;
+  margin-left: 5px;
+  float: right;
+}
+#OF_form1 .form_errors,
+#OF_form1 .form_error {
+  margin: 1em 0;
+  font-size: 12px;
+  color: #f00;
+  font-weight: bold;
+}
+
+/* Responsive */
+@media screen and (max-width: 480px) {
+  #OF_header,
+  #OF_footer {
+    width: 100%;
+  }
+  #OF_form1 {
+    width: 100%;
+  }
+  #OF_form1 table#formtable tr#caption th {
+    width: 100%;
+    padding: 5px 0;
+  }
+  tr#caption {
+    width: 100%;
+  }
+  #OF_form1 table#formtable tr th,
+  #OF_form1 table#formtable tr td {
+    width: 100%;
+    padding: 5px 0;
+  }
+  #OF_form1 .required,
+  #OF_form1 table#formtable tr td label {
+    float: none;
+  }
+  #OF_form1 select {
+    margin-left: 5px;
+  }
+  #formtable {
+    width: 100%;
+    margin: 5px 0;
+  }
+  #formtable th,
+  #formtable td {
+    width: 100%;
+    display: block;
+    border-top: none;
+  }
+  #formtable input[type="text"],
+  #formtable textarea {
+    width: 95%;
+    margin: 5px;
+  }
+}

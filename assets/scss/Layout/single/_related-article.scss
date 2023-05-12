@@ -1,0 +1,76 @@
+@use "../../variables" as *;
+
+.column_post {
+  &__contents {
+    .related_article {
+      h4 {
+        font-size: 2.2rem;
+        font-weight: 600;
+        padding-left: 16px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        margin-top: 50px;
+        margin-bottom: 28px;
+        border-left: 6px solid #00baad;
+        line-height: 1.5;
+
+        @include device-width-540px {
+          font-size: 1.8rem;
+        }
+      }
+      a {
+        display: flex;
+        transition: all 0.2 ease-out;
+        border: 1px solid #e6e6e6;
+        padding: 15px;
+        display: flex;
+        align-items: center;
+
+        figure {
+          flex-shrink: 0;
+          width: 120px;
+          height: 120px;
+          margin: 0;
+          margin-right: 20px;
+          overflow: hidden;
+          display: flex;
+
+          img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+          }
+          &.noimg {
+            background: #e6e6e6;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+        &:hover img {
+          transform: scale(1.2);
+          transition-duration: 0.3s;
+        }
+      }
+      &__lead {
+        font-weight: bold;
+        margin-bottom: 13px;
+        line-height: 1.3;
+
+        @include device-width-540px {
+          font-size: 1.2rem;
+        }
+      }
+      &__ttl {
+        font-size: 1.6rem;
+        line-height: 1.6;
+        @include ThreePointLeader(2);
+
+        @include device-width-540px {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}

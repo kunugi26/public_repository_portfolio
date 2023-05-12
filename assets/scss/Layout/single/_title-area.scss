@@ -1,0 +1,73 @@
+@use "../../variables" as *;
+
+// 投稿ページ
+.column_post {
+  display: flex;
+  justify-content: center;
+  padding-top: 80px;
+  background-color: #fff;
+  color: #333;
+
+  @include device-width-800px {
+    margin-top: 20px;
+    flex-direction: column;
+  }
+  li {
+    list-style: none;
+  }
+  &__contents {
+    width: 100%;
+    max-width: 880px;
+    padding: 0;
+
+    p {
+      font-size: 1.6rem;
+      padding: 0;
+    }
+    // タイトル周り
+    .title_wrap {
+      padding: 40px;
+      padding-bottom: 25px;
+      margin-bottom: 58px;
+      border: 1px solid #ddd;
+
+      @include device-width-540px {
+        padding: 20px;
+        margin-bottom: 24px;
+      }
+      .flex {
+        justify-content: space-between;
+
+        @include device-width-540px {
+          flex-direction: column;
+        }
+        .post-categories {
+          display: flex;
+          flex-wrap: wrap;
+          margin-bottom: 12px;
+
+          li {
+            margin-right: 8px;
+            margin-bottom: 4px;
+
+            a {
+              font-size: 10px;
+              padding: 6px 14px;
+              border: solid 1px;
+              border-radius: 28px;
+
+              &:hover {
+                background: #707070;
+                color: #fff;
+                transition: all 0.3s ease-out;
+              }
+            }
+          }
+        }
+        time {
+          font-size: 11px;
+        }
+      }
+    }
+  }
+}

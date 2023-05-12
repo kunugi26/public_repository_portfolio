@@ -1,0 +1,38 @@
+@use "../../variables" as *;
+.SideBar {
+  // 検索フォーム
+  nav.search {
+    @include device-width-800px {
+      text-align: center;
+    }
+    .searchform {
+      width: 100%;
+
+      @include device-width-800px {
+        max-width: 316px;
+      }
+      input {
+        width: 100%;
+        border: solid 1px $subColor;
+        border-radius: 0;
+        padding: 8px 4px;
+
+        @include device-width-800px {
+          padding: 20px 8px;
+          font-size: 1.8rem;
+        }
+        @include device-width-414px {
+          padding: 8px;
+          font-size: 1.2rem;
+        }
+        &::placeholder {
+          color: #b4b4b4;
+        }
+      }
+      button {
+        font-size: 16px;
+        transform: translate(0, -50%);
+      }
+    }
+  }
+}

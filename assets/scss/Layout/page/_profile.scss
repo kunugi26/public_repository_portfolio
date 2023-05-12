@@ -1,0 +1,136 @@
+@use "../../variables" as *;
+
+/*--------------------------------------
+  profile.html　プロフィールページ
+  --------------------------------------*/
+
+.prof {
+  background: rgba(40, 100, 172, 0.7);
+
+  h1,
+  h2 {
+    padding-left: 32px;
+  }
+
+  &__nav {
+    max-width: 500px;
+    margin: auto;
+
+    ol {
+      display: flex;
+      justify-content: center;
+
+      li {
+        margin: auto;
+        font-size: 20px;
+      }
+    }
+  }
+  article {
+    margin: 0;
+    width: 100%;
+
+    @include device-width-1140px {
+      margin: 0;
+      padding: 32px 40px 40px 64px;
+    }
+    @include device-width-540px {
+      margin: 0;
+      padding: 4px;
+    }
+
+    h2 {
+      @include device-width-1140px {
+        margin-top: 0;
+        font-size: 3rem;
+      }
+    }
+    img {
+      max-width: 600px;
+    }
+    dl {
+      border-left: solid 5px #979797;
+      padding: 16px 24px 32px;
+      margin: 64px 0;
+      @include device-width-540px {
+        padding-left: 8px;
+        margin: 32px 0;
+      }
+
+      dt {
+        display: inline-block;
+        font-size: 2.4rem;
+        font-weight: bold;
+        margin-top: 20px;
+
+        @include device-width-1140px {
+          font-size: 1.8rem;
+        }
+        @include device-width-540px {
+          font-size: 1.6rem;
+        }
+      }
+      dd {
+        font-size: 2rem;
+        border-left: solid 3px #1f2f54;
+        padding-left: 24px;
+        margin-bottom: 48px;
+
+        @include device-width-1140px {
+          font-size: 1.8rem;
+          padding-left: 24px;
+          margin: 0 0 48px 16px;
+        }
+        @include device-width-540px {
+          font-size: 1.6rem;
+          padding-left: 8px;
+          margin: 16px 0 24px 16px;
+        }
+      }
+      .w-20per img {
+        width: 20%;
+        margin-top: 16px;
+
+        @include device-width-1140px {
+          width: 45%;
+        }
+      }
+    }
+    ul {
+      font-size: 2.4rem;
+      margin: 8px;
+
+      @include device-width-1140px {
+        font-size: 1.8rem;
+        margin: 8px;
+      }
+      @include device-width-540px {
+        font-size: 1.6rem;
+      }
+
+      ul {
+        padding-left: 20px;
+        @include device-width-540px {
+          padding-left: 0;
+        }
+        li {
+          @include device-width-540px {
+            margin-bottom: 16px;
+          }
+        }
+      }
+    }
+    .career {
+      dd {
+        border-left: solid 3px #f7c114;
+        padding-left: 24px;
+      }
+    }
+    .text {
+      img {
+        width: 100%;
+        max-width: 600px;
+      }
+    }
+  }
+}

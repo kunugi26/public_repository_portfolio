@@ -1,0 +1,49 @@
+@use "../../variables" as *;
+
+// 投稿ページ
+.column_post {
+  &__contents {
+    // 目次
+    #toc {
+      width: 100%;
+      max-width: 405px;
+      border: 1px solid #1d1d1d;
+      margin: 70px 0 72px;
+      padding: 0;
+      border-radius: 0;
+
+      @include device-width-540px {
+        margin: 32px 0 0;
+      }
+      .mokuji {
+        background: #1d1d1d;
+        padding: 12px 0;
+        letter-spacing: 7px;
+        display: inline-block;
+        position: relative;
+        width: 100%;
+
+        span {
+          color: #fff;
+          font-weight: 700;
+          font-size: 16px;
+          padding-left: 24px;
+        }
+      }
+      ol {
+        padding-left: 48px;
+
+        &:first-of-type {
+          padding-top: 12px;
+          padding-bottom: 12px;
+        }
+        li {
+          list-style: disc;
+        }
+        ol {
+          padding-left: 12px;
+        }
+      }
+    }
+  }
+}

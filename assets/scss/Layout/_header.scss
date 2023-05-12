@@ -1,0 +1,187 @@
+@use '../variables' as *;
+
+/*--------------------------------------
+  グローバルメニュー
+  --------------------------------------*/
+.g_nav {
+  position: relative;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 24px 0;
+  height: 80px;
+  line-height: 80px;
+  z-index: 1;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+
+  @include device-width-540px {
+    height: 64px;
+    line-height: 64px;
+  }
+
+  &__h-logo {
+    @include device-width-800px {
+      display: none;
+    }
+    @include device-width-540px {
+      height: 64px;
+    }
+
+    img {
+      @include device-width-540px {
+        height: 64px;
+      }
+    }
+  }
+  &__ttl {
+    position: absolute;
+    left: 10%;
+    top: 16px;
+    font-size: 1rem;
+    text-align: left;
+
+    @include device-width-414px {
+      left: 16%;
+      top: 13%;
+    }
+    img {
+      width: 30%;
+
+      @include device-width-1140px {
+        width: 40%;
+      }
+      @include device-width-800px {
+        width: 40%;
+      }
+      @include device-width-540px {
+        width: 55%;
+      }
+      @include device-width-414px {
+        width: 65%;
+      }
+    }
+  }
+  &__sp_nav_btn {
+    display: none;
+
+    @include device-width-800px {
+      display: block;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      margin: 0;
+      color: #fff;
+      height: 80px;
+      width: 80px;
+      text-align: center;
+      background: #082f56;
+      cursor: pointer;
+      cursor: hand;
+    }
+    @include device-width-540px {
+      height: 64px;
+      width: 64px;
+    }
+    span {
+      @include device-width-800px {
+        display: block;
+      }
+    }
+  }
+  &__page_links {
+    ul {
+      position: absolute;
+      display: flex;
+      right: 0;
+      bottom: 0;
+      font-size: 1.5rem;
+      margin: 0 24px 0 0;
+
+      @include device-width-800px {
+        display: none;
+      }
+
+      li {
+        padding: 0px 24px;
+        font-size: 2rem;
+        list-style: none;
+
+        @include device-width-1140px {
+          padding: 0px 12px;
+          font-size: 1.8rem;
+          list-style: none;
+        }
+        @include device-width-800px {
+          width: 100%;
+          border-bottom: solid #082f56 1px;
+          background: #eee;
+        }
+        a {
+          color: #000;
+          text-decoration: none;
+          display: block;
+
+          &:hover {
+            color: #f7c114;
+
+            @include device-width-800px {
+              color: #1f2f54;
+              font-weight: bold;
+            }
+          }
+          &.active {
+            color: $mainYellow;
+          }
+        }
+        &.d-none {
+          display: none;
+
+          @include device-width-800px {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+  span {
+    @include device-width-800px {
+      display: block;
+    }
+  }
+}
+
+// SP版 MENU OPEN時のスタイル
+.g_nav__page_links {
+  &.show {
+    @include device-width-800px {
+      background: rgba(0, 0, 0, 0.9);
+      position: absolute;
+      top: 80px;
+      width: 100%;
+      height: calc(100vh - 80px);
+      z-index: -2;
+    }
+    @include device-width-540px {
+      top: 64px;
+      height: calc(100vh - 64px);
+    }
+    ul {
+      @include device-width-800px {
+        display: block;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        right: 0;
+        top: 0;
+      }
+    }
+  }
+}
+
+// 下スクロール後の追尾対応
+.g_nav {
+  &.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+}

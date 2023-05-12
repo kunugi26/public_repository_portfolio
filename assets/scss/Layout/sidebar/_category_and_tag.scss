@@ -1,0 +1,100 @@
+@use "../../variables" as *;
+.SideBar {
+  // カテゴリー and タグ 共通設定
+  .categoriesLists,
+  .keywordsLists {
+    ul {
+      position: relative;
+      li {
+        &:nth-of-type(n + 11) {
+          display: none;
+        }
+        &.open {
+          display: list-item;
+          transition-duration: 0.3s;
+        }
+      }
+    }
+    .Button_Open_or_Close {
+      color: #aaa;
+      display: block;
+      cursor: pointer;
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: 18px;
+
+      &:hover {
+        opacity: 0.7;
+      }
+
+      &::after {
+        content: "+";
+        font-weight: bold;
+        color: #aaa;
+      }
+      &.open {
+        &::after {
+          content: "-";
+        }
+      }
+    }
+  }
+  // カテゴリー
+  .categoriesLists {
+    h3::after {
+      // content: "Category";
+    }
+    ul {
+      padding-left: 20px;
+
+      @include device-width-800px {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      li {
+        list-style: disc;
+        margin-bottom: 8px;
+        width: 100%;
+        line-height: 1.3;
+
+        @include device-width-800px {
+          width: 33%;
+        }
+        @include device-width-540px {
+          width: 50%;
+        }
+        @include device-width-414px {
+          width: 100%;
+        }
+        a {
+          font-size: 14px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  // キーワード
+  .keywordsLists {
+    h3::after {
+      content: "Keyword";
+    }
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+
+      li {
+        margin: 6px;
+
+        a {
+          font-size: 11px;
+          background-color: #e0e0e0;
+          border-radius: 4px;
+          color: #707070;
+          padding: 8px;
+        }
+      }
+    }
+  }
+}

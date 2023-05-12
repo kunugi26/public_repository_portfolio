@@ -1,0 +1,300 @@
+@use "../../variables" as *;
+
+.column_post {
+  &__contents {
+    &__inside {
+      margin-bottom: 60px;
+      padding: 0;
+      word-break: break-all;
+
+      // style属性直接指定した場合のオーバーフロー対策
+      article,
+      section,
+      div {
+        max-width: 100%;
+      }
+      // テーブル
+      .table-scroll {
+        @include device-width-768px {
+          overflow: auto;
+          white-space: nowrap;
+          margin: 2.5rem 0 6rem;
+        }
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        height: 72px;
+
+        th,
+        td {
+          font-size: 1.4rem;
+          text-align: center;
+          letter-spacing: -0.27px;
+          padding: 2.2rem 1.8rem;
+          border-bottom: 1px solid #dee2e6;
+          vertical-align: middle;
+
+          &:not(:last-of-type) {
+            border-right: 1px solid #dee2e6;
+          }
+        }
+        thead {
+          th {
+            background: #9ee3de;
+            font-weight: 700;
+          }
+        }
+        tbody {
+          tr {
+            height: 24px;
+
+            &:nth-child(2n) {
+              background-color: #0000000d;
+            }
+            th {
+              border-right: 1px solid #dee2e6;
+              font-weight: 600;
+            }
+            td {
+              font-size: 1.4rem;
+              text-align: center;
+              letter-spacing: -0.27px;
+              padding: 2.2rem 1.8rem;
+              vertical-align: middle;
+            }
+          }
+        }
+      }
+      // 非順序リスト (ネスト化)
+      ul,
+      ol {
+        li {
+          font-size: 1.8rem;
+          padding-left: 2.2rem;
+          margin-bottom: 0.4rem;
+          font-weight: 600;
+          position: relative;
+          line-height: 1.7;
+
+          @include device-width-540px {
+            font-size: 1.4rem;
+          }
+          &::before {
+            content: "";
+            position: absolute;
+            background: #e6e6e6;
+            width: 1.5rem;
+            height: 1.5rem;
+            left: 0;
+            top: 9px;
+            border-radius: 50%;
+          }
+          ul {
+            padding-left: 20px;
+
+            li {
+              padding-left: 0;
+              list-style: disc;
+
+              &::before {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+      // 順序リスト (ネスト化)
+      ol {
+        counter-reset: my-counter;
+        li {
+          font-size: 1.8rem;
+          font-weight: 600;
+          margin-bottom: 0.4rem;
+          padding-left: 3.5rem;
+          line-height: 1.888;
+          position: relative;
+
+          @include device-width-540px {
+            font-size: 1.4rem;
+          }
+          &::before {
+            content: counter(my-counter);
+            counter-increment: my-counter;
+            font-size: 1rem;
+            position: absolute;
+            width: 2.2rem;
+            height: 2.2rem;
+            border-radius: 50%;
+            left: 0;
+            top: 0.7rem;
+            color: #fff;
+            font-weight: 700;
+            background: #105191;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+      }
+      // チェックリスト
+      .check {
+        li {
+          padding-left: 28px;
+          font-weight: bold;
+          line-height: 1.777;
+          position: relative;
+          list-style: none;
+
+          &::before {
+            content: "\f058";
+            font-family: $fontAwesome;
+            background: none;
+            color: #00baad;
+            position: absolute;
+            top: 0;
+          }
+          ul {
+            li {
+              list-style: disc;
+              padding-left: 0;
+            }
+          }
+        }
+      }
+      // 定義リスト
+      dl {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+        width: 100%;
+        border-bottom: none;
+
+        @include device-width-540px {
+          flex-flow: column;
+        }
+
+        dt {
+          background: #f5f5f5;
+          padding: 5px;
+          width: 150px;
+          border-right: 1px solid #ccc;
+          border-bottom: 1px solid #ccc;
+        }
+        dd {
+          background: #fff;
+          padding: 5px;
+          width: calc(90% - 150px);
+          border-bottom: 1px solid #ccc;
+        }
+      }
+      // 引用(フレームなし)
+      blockquote {
+        position: relative;
+        padding: 12px 0px 12px 24px;
+        color: #aaa;
+
+        &::before {
+          content: "";
+          border-left: 6px solid #dddbdb;
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+        }
+      }
+      // フレーム共通
+      .outline,
+      .outline2 {
+        box-sizing: border-box;
+
+        blockquote {
+          color: #606060;
+          margin: 0;
+          padding: 0;
+
+          &::before {
+            content: none;
+          }
+        }
+      }
+      // フレーム1
+      .outline {
+        border: 1px solid #d6d6d6;
+        border-radius: 4px;
+        width: 100%;
+        margin: 33px 0 24px;
+        padding: 30px 24px;
+        line-height: 2;
+      }
+      // フレーム2
+      .outline2 {
+        background-color: #f7f7f7;
+        border: 1px solid #dddddd;
+        border-radius: 4px;
+        width: 100%;
+        margin: 33px 0 24px;
+        padding: 32px 24px;
+        line-height: 2;
+        position: relative;
+
+        &::before,
+        &::after {
+          color: #b9b4b4;
+          display: block;
+          font-family: "Font Awesome 5 Free";
+          font-weight: 900;
+          position: absolute;
+        }
+        &::before {
+          content: "\f10d";
+          top: 4px;
+          left: 12px;
+        }
+        &::after {
+          content: "\f10e";
+          bottom: 4px;
+          right: 12px;
+        }
+      }
+      /*ソースコード表示*/
+      pre {
+        position: relative;
+        margin-left: 0px;
+        padding: 30px 0 10px 20px; /*余白：上・右・下・左*/
+        border-left: solid 10px #8fd2ed; /*左ラインの色・幅*/
+        background: #2f3437; /*背景色*/
+        color: #fff; /*文字色*/
+        font-size: 1em; /*文字サイズ*/
+        overflow: auto;
+        &:after {
+          /*ラベルの設定*/
+          content: "CODE"; /*ラベルに表示する文字*/
+          background: #969998; /*背景色*/
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          padding: 5px 10px;
+          line-height: 1;
+          font-size: 0.9em;
+          color: #fff;
+        }
+      }
+    }
+    &__inquiry {
+      box-sizing: border-box;
+      border: 1px solid #dee2e6;
+      width: 100%;
+      margin-top: 20px;
+      padding: 19px 19px 18px 24px;
+      font-size: 1.2rem;
+      font-weight: 400;
+      line-height: 1.5;
+
+      a {
+        color: $linkColor;
+        text-decoration: underline;
+      }
+    }
+  }
+}

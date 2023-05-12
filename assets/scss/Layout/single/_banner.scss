@@ -1,0 +1,34 @@
+@use "../../variables" as *;
+
+.column_post {
+  &__contents {
+    .lp_banner {
+      width: 100%;
+      text-align: center;
+
+      a {
+        .pc-only {
+          max-width: 400px;
+          height: auto;
+
+          @include device-width-768px {
+            display: none;
+          }
+        }
+        .sp-only {
+          display: none;
+
+          @include device-width-768px {
+            display: inline;
+            width: 100%;
+            max-width: 350px;
+            height: auto;
+          }
+          @include device-width-414px {
+            max-width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+version: "3.9"
+services:
+  nuxt:
+    build: .
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - "1002:1002"

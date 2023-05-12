@@ -1,0 +1,66 @@
+@use "../../variables" as *;
+.SideBar {
+  width: 260px;
+  margin: 0 0 48px 40px;
+
+  @include device-width-800px {
+    width: 100%;
+    padding: 36px 16px 48px;
+    box-sizing: border-box;
+  }
+  @include device-width-540px {
+    width: calc(100% + 24px);
+    margin: 0 -12px;
+  }
+  aside {
+    margin-bottom: 52px;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  .categoryBanner {
+    display: block;
+    margin-bottom: 24px;
+
+    @include device-width-768px {
+      display: none;
+    }
+    img {
+      width: 100%;
+
+      &.pc-only {
+        @include device-width-768px {
+          display: none;
+        }
+      }
+      &.sp-only {
+        display: none;
+
+        @include device-width-768px {
+          display: block;
+        }
+      }
+    }
+  }
+
+  h3 {
+    font-size: 2rem;
+    font-weight: normal;
+    border-bottom: solid #ccc 1px;
+    position: relative;
+    margin-bottom: 8px;
+
+    &::after {
+      content: "";
+      font-size: 24px;
+      font-family: "Roboto";
+      font-weight: bold;
+      color: #606060;
+      opacity: 0.2;
+      position: absolute;
+      right: 0;
+      bottom: -6px;
+    }
+  }
+}

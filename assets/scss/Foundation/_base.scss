@@ -1,0 +1,306 @@
+@use "../variables" as *;
+/*--------------------------------------
+  共通CSS / common
+  --------------------------------------*/
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  color: #fff;
+  width: 100%;
+  height: 100%; /* ★大事なのは「100%」 */
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: Lato, sans-serif, -apple-system, "ヒラギノ角ゴ Pro W3",
+    "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック",
+    "MS PGothic";
+}
+h1 {
+  margin-top: 0;
+  font-size: 5.5rem;
+  @include device-width-1140px {
+    font-size: 3rem;
+    text-align: center;
+  }
+  @include device-width-540px {
+    font-size: 2.5rem;
+  }
+}
+h2 {
+  margin-top: 0;
+  font-size: 3rem;
+
+  @include device-width-1140px {
+    font-size: 2.2rem;
+    text-align: center;
+  }
+}
+h3 {
+  margin-top: 0;
+  font-size: 4rem;
+
+  @include device-width-1140px {
+    font-size: 2rem;
+  }
+}
+h4 {
+  margin: 24px 0 0px;
+  font-size: 2.8rem;
+
+  @include device-width-1140px {
+    font-size: 1.8rem;
+  }
+}
+
+article {
+  width: 100%;
+  margin: 0;
+  padding: 180px 100px 100px 130px;
+
+  @include device-width-800px {
+    margin: 0;
+    padding: 8px;
+  }
+}
+
+section {
+  width: 100%;
+  padding: 0 32px;
+
+  @include device-width-1140px {
+    padding: 0;
+  }
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  color: #f7c114;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+p {
+  font-size: 2.4rem;
+  padding: 0 24px;
+
+  @include device-width-1140px {
+    font-size: 1.6rem;
+    padding: 0 24px;
+  }
+}
+
+ol,
+ul {
+  padding-left: 0;
+}
+
+ul {
+  font-size: 2.4rem;
+
+  @include device-width-1140px {
+    font-size: 1.6rem;
+    padding-left: 20px;
+  }
+}
+
+.wrapper {
+  width: 100%;
+}
+
+.pc,
+.pc-only,
+.pc_only {
+  @include device-width-540px {
+    display: none;
+  }
+}
+
+.sp,
+.sp-only,
+.sp_only {
+  display: none;
+
+  @include device-width-540px {
+    display: block;
+  }
+}
+
+.mainSite {
+  max-width: 2000px;
+}
+
+.anime {
+  background: #fff;
+  height: 100vh;
+  display: table;
+  width: 100%;
+
+  .innner {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  img,
+  .svg {
+    display: block;
+    width: 40%;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+
+.see-more {
+  text-align: left;
+  font-size: 1.8rem;
+  margin-top: 64px;
+
+  @include device-width-1140px {
+    text-align: center;
+    font-size: 1rem;
+    margin: 64px 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: #fff;
+    border: #fff solid 3px;
+    margin: 0 auto 128px;
+    padding: 16px 32px;
+
+    @include device-width-1140px {
+      text-decoration: none;
+      color: #fff;
+      border: #fff solid 3px;
+      margin: 0 auto 128px;
+      padding: 16px 32px;
+    }
+
+    &:hover {
+      color: rgba(0, 0, 0, 1);
+      background: #fff;
+      transition: all 0.4s ease-out 0s;
+    }
+  }
+}
+
+.flex {
+  display: flex;
+}
+
+.bg-init,
+.animsition-overlay-slide {
+  background-color: #f7c114;
+}
+
+/* 初回のみSVGロゴアニメーションを読み込む処理 */
+.mod_message {
+  display: none;
+  position: relative;
+  border-radius: 4px;
+
+  button {
+    margin: 0;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+}
+
+#slide {
+  position: relative;
+  min-height: 480px;
+}
+#slide img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  max-width: 1200px;
+}
+
+.mask {
+  background: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.modal {
+  background: #fff;
+  max-width: 1300px;
+  min-height: 80vh;
+  padding: 20px;
+  border-radius: 4px;
+  position: absolute;
+  top: 140px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+.hidden {
+  display: none;
+}
+.modal p {
+  font-size: 1.3rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.close {
+  position: absolute;
+  bottom: 64px;
+  left: 0;
+  right: 0;
+  width: 10%;
+  padding: 16px;
+  border: solid 3px #000;
+  text-align: center;
+  margin: 0 auto;
+}
+.close:hover {
+  background: #000;
+  color: #fff;
+}
+.modal {
+  display: none;
+}
+.modalBody {
+  position: fixed;
+  z-index: 1000;
+  background: #000;
+  width: 690px;
+  left: 50%;
+  top: 50%;
+  height: 400px;
+}
+.modalBK {
+  position: fixed;
+  z-index: 999;
+  height: 100%;
+  width: 100%;
+  background: #000;
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+  -moz-opacity: 0.9;
+}
+.js_accordion {
+  // display: none;
+}

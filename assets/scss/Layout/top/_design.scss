@@ -1,0 +1,40 @@
+@use "../../variables" as *;
+
+#top {
+  .design {
+    margin: 0;
+    padding: 180px 100px 100px 130px;
+    background: rgba(248, 200, 201, 0.7);
+    position: static;
+
+    @include device-width-800px {
+      padding: 32px;
+    }
+    @include device-width-414px {
+      padding: 32px 8px;
+    }
+    .bx-wrapper {
+      margin: 0;
+      width: 100%;
+    }
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      padding-left: 0;
+
+      li {
+        list-style: none;
+        width: 48%;
+        margin: 4px 4px;
+        flex-wrap: wrap;
+
+        @include device-width-800px {
+          width: 100%;
+          margin: 4px 0;
+          flex-wrap: nowrap;
+        }
+      }
+    }
+  }
+}

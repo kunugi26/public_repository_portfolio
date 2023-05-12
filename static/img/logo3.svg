@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 296.75 86.38" style="">
+  <defs>
+    <style>
+.cls-1,.cls-2,.cls-3{fill:none;stroke-miterlimit:10;}.cls-1{stroke:#009a3e;}.cls-2{stroke:#eb6100;}.cls-3{stroke:#00a0e9;}
+</style>
+  </defs>
+  <title>shape</title>
+  <g id="shape">
+    <path id="rectangle" class="cls-1 ZeFmHvXN_0" width="85.04" height="85.04" d="M0.5 0.84 L85.54 0.84 L85.54 85.88000000000001 L0.5 85.88000000000001 Z"></path>
+    <path id="circle" class="cls-2 ZeFmHvXN_1" d="M109.29999999999998,43.02A42.52,42.52 0,1,1 194.34,43.02A42.52,42.52 0,1,1 109.29999999999998,43.02"></path>
+    <path id="triangule" class="cls-3 ZeFmHvXN_2" d="M253.26,2.04L274.58,38.95L295.89,75.86L253.26,75.86L210.64,75.86L231.95,38.95L253.26,2.04Z"></path>
+  </g>
+<style data-made-with="vivus-instant">.ZeFmHvXN_0{stroke-dasharray:341 343;stroke-dashoffset:342;animation:ZeFmHvXN_draw 788ms ease-in-out 0ms forwards;}.ZeFmHvXN_1{stroke-dasharray:268 270;stroke-dashoffset:269;animation:ZeFmHvXN_draw 619ms ease-in-out 788ms forwards;}.ZeFmHvXN_2{stroke-dasharray:256 258;stroke-dashoffset:257;animation:ZeFmHvXN_draw 592ms ease-in-out 1407ms forwards;}@keyframes ZeFmHvXN_draw{100%{stroke-dashoffset:0;}}@keyframes ZeFmHvXN_fade{0%{stroke-opacity:1;}93.54838709677419%{stroke-opacity:1;}100%{stroke-opacity:0;}}</style></svg>

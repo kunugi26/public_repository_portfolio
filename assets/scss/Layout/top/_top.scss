@@ -1,0 +1,40 @@
+@use "../../variables" as *;
+
+#top {
+  article {
+    display: flex;
+    margin: 0;
+    width: 100%;
+
+    @include device-width-1140px {
+      display: block;
+      padding: 90px 50px 50px 65px;
+    }
+    @include device-width-800px {
+      display: block;
+      margin: 0;
+      padding: 32px;
+    }
+    @include device-width-414px {
+      padding: 32px 8px;
+    }
+    section {
+      width: 100%;
+      flex-direction: column;
+    }
+  }
+  .profile {
+    background: rgba(74, 90, 149, 0.8);
+  }
+  .skill {
+    background: rgba(247, 193, 20, 0.84);
+  }
+  .works {
+    background: rgba(42, 173, 142, 0.8);
+  }
+  .ruby {
+    img {
+      width: 100%;
+    }
+  }
+}
